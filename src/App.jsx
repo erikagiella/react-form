@@ -33,7 +33,10 @@ function App() {
         </form>
         <ul className="list-group my-3">
           {articles.map((article, i) =>
-            <li className='list-group-item' key={`${i}-article`}>{article}</li>
+            <li className='list-group-item d-flex justify-content-between' key={`${i}-article`}>
+              {article}
+              <button className='btn btn-danger' style={{ cursor: 'pointer' }}><i className="bi bi-trash-fill"></i></button>
+            </li>
           )
           }
         </ul>
