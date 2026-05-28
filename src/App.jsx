@@ -39,19 +39,23 @@ function App() {
           <input type='text' placeholder='Add a new title' value={newArticle} onChange={e => setNewArticle(e.target.value)} />
           <button>Add article</button>
         </form>
-        <ul className="list-group my-3">
-          {articles.map((article, i) =>
-            <li className='list-group-item d-flex justify-content-between' key={`${i}-article`}>
-              {article}
-              <button className='btn btn-danger' style={{ cursor: 'pointer' }}
-                onClick={() => deleteArticle(i)}>
-                <i className="bi bi-trash-fill"></i>
-              </button>
-            </li>
-          )
-          }
-        </ul>
-      </main>
+
+        {articles.length === 0 ?
+          (<div className='text-center fs-3'> No more articles left!</div>)
+          :
+          (<ul className="list-group my-3">
+            {articles.map((article, i) =>
+              <li className='list-group-item d-flex justify-content-between' key={`${i}-article`}>
+                {article}
+                <button className='btn btn-danger' style={{ cursor: 'pointer' }}
+                  onClick={() => deleteArticle(i)}>
+                  <i className="bi bi-trash-fill"></i>
+                </button>
+              </li>
+            )}
+          </ul>)}
+
+      </main >
     </>
   )
 }
