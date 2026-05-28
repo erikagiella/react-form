@@ -14,8 +14,9 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setArticles([newArticle, ...articles])
+    setNewArticle('');
   }
-
 
   return (
     <>
