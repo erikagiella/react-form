@@ -54,7 +54,7 @@ function App() {
               onChange={(e) => setNewArticle(e.target.value)}
             />
 
-            <button className="btn btn-primary fw-bolder">
+            <button className="btn btn-primary fw-bolder fs-5 px-5">
               <i className="bi bi-plus-lg me-2"></i>
               Add
             </button>
@@ -80,7 +80,7 @@ function App() {
                     className="btn btn-sm btn-danger"
                     onClick={() => deleteArticle(i)}
                   >
-                    <i className="bi bi-trash-fill"></i>
+                    <i className="bi bi-trash-fill fs-5"></i>
                   </button>
                 </li>
               ))}
