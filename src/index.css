@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: "Roboto", sans-serif !important;
+}
 
 h1 {
   font-family: "Henny Penny", system-ui;

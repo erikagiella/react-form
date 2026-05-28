@@ -1,3 +1,5 @@
+import ArticleListItem from "./ArticleListItem";
+
 export default function ArticleList({ articles, deleteArticle }) {
     return (
 
@@ -10,19 +12,11 @@ export default function ArticleList({ articles, deleteArticle }) {
         ) : (
             <ul className="list-group">
                 {articles.map((article, i) => (
-                    <li
+                    <ArticleListItem
                         key={`${i}-article`}
-                        className="list-group-item d-flex justify-content-between align-items-center"
-                    >
-                        <span>{article}</span>
-
-                        <button
-                            className="btn btn-sm btn-danger"
-                            onClick={() => deleteArticle(i)}
-                        >
-                            <i className="bi bi-trash-fill fs-5"></i>
-                        </button>
-                    </li>
+                        article={article}
+                        index={i}
+                        deleteArticle={deleteArticle} />
                 ))}
             </ul>
         )
