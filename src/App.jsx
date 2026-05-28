@@ -18,6 +18,14 @@ function App() {
     setNewArticle('');
   }
 
+  function deleteArticle(i) {
+    const updatedArticles = articles.filter((article, index) => {
+      return index !== i;
+    }
+    )
+    setArticles(updatedArticles);
+  }
+
   return (
     <>
       <header className="container text-center my-3">
@@ -35,7 +43,10 @@ function App() {
           {articles.map((article, i) =>
             <li className='list-group-item d-flex justify-content-between' key={`${i}-article`}>
               {article}
-              <button className='btn btn-danger' style={{ cursor: 'pointer' }}><i className="bi bi-trash-fill"></i></button>
+              <button className='btn btn-danger' style={{ cursor: 'pointer' }}
+                onClick={() => deleteArticle(i)}>
+                <i className="bi bi-trash-fill"></i>
+              </button>
             </li>
           )
           }
