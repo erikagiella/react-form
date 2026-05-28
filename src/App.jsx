@@ -3,6 +3,13 @@ import { useState } from 'react'
 
 function App() {
 
+  const articlesList = [
+    "Il cambiamento climantico",
+    "La nuova Ferrari elettrica",
+    "Gatti neri: portano davvero sfortuna?"
+  ]
+
+  const [articles, setArticles] = useState(articlesList);
 
   return (
     <>
@@ -13,13 +20,16 @@ function App() {
         </h1>
       </header>
       <main className='container'>
-        <form>
+        <form >
           <input type='text' placeholder='Add a new title' />
-          <button type='submit'>Add article</button>
+          <button>Add article</button>
         </form>
-        <div className="card my-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit autem laborum debitis commodi vitae, eligendi rem, ad blanditiis magnam natus enim tempore dignissimos consequuntur! Facere nostrum suscipit quos possimus dignissimos.
-        </div>
+        <ul className="list-group my-3">
+          {articles.map((article, i) =>
+            <li className='list-group-item' key={`${i}-article`}>{article}</li>
+          )
+          }
+        </ul>
       </main>
     </>
   )
